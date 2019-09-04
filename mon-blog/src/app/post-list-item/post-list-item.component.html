@@ -1,0 +1,17 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': lovePost >= '1',
+                'list-group-item-danger': lovePost < '0'}"
+    style="border:0px">
+    <div [ngStyle]="{color: getColor()}">
+        <h4><span style="font-weight: bold">{{postTitle}}</span><span style="float: right; color: grey">{{datePost | date:'short'}}</span></h4>
+        <p>{{postContent}}</p>
+    </div>
+    <div style="padding-top: 20px; padding-bottom: 20px">
+        <button class="btn btn-success"moins
+                style="color: white; margin-right: 10px"
+                (click)="loveIt()">Love it!</button>
+        <button class="btn btn-danger"
+                style="color: white"
+                (click)="dontLove()">Don't love it!</button>
+    </div>
+</li>
